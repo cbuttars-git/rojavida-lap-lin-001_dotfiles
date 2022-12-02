@@ -28,7 +28,6 @@ import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.IndependentScreens
 
-
 import XMonad.Layout.CenteredMaster(centerMaster)
 
 import Graphics.X11.ExtraTypes.XF86
@@ -132,8 +131,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
   -- SUPER + FUNCTION KEYS
 
-  [ ((modMask, xK_e), spawn $ "atom" )
-  , ((modMask, xK_c), spawn $ "conky-toggle" )
+  [ --((modMask, xK_e), spawn $ "atom" )
+    ((modMask, xK_c), spawn $ "conky-toggle" )
   , ((modMask, xK_f), sendMessage $ Toggle NBFULL)
   , ((modMask, xK_h), spawn $ "urxvt 'htop task manager' -e htop" )
   , ((modMask, xK_m), spawn $ "pragha" )
@@ -145,8 +144,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_x), spawn $ "archlinux-logout" )
   , ((modMask, xK_Escape), spawn $ "xkill" )
   , ((modMask, xK_Return), spawn $ "alacritty" )
-  , ((modMask, xK_F1), spawn $ "vivaldi-stable" )
-  , ((modMask, xK_F2), spawn $ "atom" )
+  --, ((modMask, xK_F1), spawn $ "vivaldi-stable" )
+  , ((modMask, xK_F1), spawn $ "firefox" )
+  --, ((modMask, xK_F2), spawn $ "atom" )
+  , ((modMask, xK_F2), spawn $ "code" )
   , ((modMask, xK_F3), spawn $ "inkscape" )
   , ((modMask, xK_F4), spawn $ "gimp" )
   , ((modMask, xK_F5), spawn $ "meld" )
@@ -178,7 +179,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((controlMask .|. mod1Mask , xK_c ), spawn $ "catfish")
   , ((controlMask .|. mod1Mask , xK_e ), spawn $ "archlinux-tweak-tool")
   , ((controlMask .|. mod1Mask , xK_f ), spawn $ "firefox")
-  , ((controlMask .|. mod1Mask , xK_g ), spawn $ "chromium -no-default-browser-check")
+  --, ((controlMask .|. mod1Mask , xK_g ), spawn $ "chromium -no-default-browser-check")
   , ((controlMask .|. mod1Mask , xK_i ), spawn $ "nitrogen")
   , ((controlMask .|. mod1Mask , xK_k ), spawn $ "archlinux-logout")
   , ((controlMask .|. mod1Mask , xK_l ), spawn $ "archlinux-logout")
@@ -189,7 +190,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((controlMask .|. mod1Mask , xK_s ), spawn $ "spotify")
   , ((controlMask .|. mod1Mask , xK_t ), spawn $ "alacritty")
   , ((controlMask .|. mod1Mask , xK_u ), spawn $ "pavucontrol")
-  , ((controlMask .|. mod1Mask , xK_v ), spawn $ "vivaldi-stable")
+  --, ((controlMask .|. mod1Mask , xK_v ), spawn $ "vivaldi-stable")
+  --, ((controlMask .|. mod1Mask , xK_v ), spawn $ "firefox")
   , ((controlMask .|. mod1Mask , xK_w ), spawn $ "arcolinux-welcome-app")
   , ((controlMask .|. mod1Mask , xK_Return ), spawn $ "alacritty")
 

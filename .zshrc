@@ -2,10 +2,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Dotnet Core Path
+export DOTNET_ROOT=$HOME/.dotnet
+# NVM Path
+[ -z "$NVM_DIR" ] && export NVM_DIR=$HOME/.nvm
+export PATH=/var/lib/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$NVM_DIR:$PATH
+
 # Path to your oh-my-zsh installation.
 #installation via script from github
 #export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
+export ZSH_CUSTOM=$HOME/.config/oh-my-zsh
 export ZSH=/usr/share/oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
@@ -13,7 +20,7 @@ export ZSH=/usr/share/oh-my-zsh/
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
-ZSH_THEME="jonathan"
+ZSH_THEME="christopher"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -131,6 +138,11 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Run NVM Scripts so environment is setup 
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
 
 ### ALIASES ###
 
